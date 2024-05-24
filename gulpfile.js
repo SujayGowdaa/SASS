@@ -31,13 +31,13 @@ const sass = require('gulp-sass')(require('sass'));
 // Define a function to compile Sass files
 function buildStyles() {
   // Source the 'index.scss' file, compile it using Sass, and output the result to the 'css' directory
-  return src('index.scss').pipe(sass()).pipe(dest('css'));
+  return src('SG-UI-LIBRARY/**/*.scss').pipe(sass()).pipe(dest('css'));
 }
 
 // Define a function to watch for changes in the 'index.scss' file and run the buildStyles function
 function watchFiles() {
   // Watch the 'index.scss' file, and whenever it changes, run the buildStyles function
-  watch(['index.scss'], buildStyles);
+  watch(['SG-UI-LIBRARY/**/*.scss'], buildStyles);
 }
 
 // Define the default Gulp task to first build styles, then watch for file changes

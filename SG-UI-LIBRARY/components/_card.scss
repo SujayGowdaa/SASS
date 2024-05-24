@@ -1,35 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-/* reset styles */
-* {
-  color: inherit;
-  margin: 0;
-}
-
-body {
-  font-family: Poppins;
-}
-
-ul {
-  padding: 0;
-  list-style-type: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-hr {
-  border: 0;
-  border-top: 1px dotted #efefef;
-}
-
-img {
-  max-width: 100%;
-}
-
-.test {
-  color: #2364dc;
-}
+@use '../variables' as *;
+@use 'sass:math';
 
 /* 
 The math module in SASS provides functions for mathematical operations, making it easier to perform calculations directly in your stylesheets. Some common functions in the math module include:
@@ -39,26 +9,34 @@ math.ceil($number): Rounds $number up to the nearest whole number.
 math.floor($number): Rounds $number down to the nearest whole number.
 math.abs($number): Returns the absolute value of $number.
 */
+
 .card {
   display: block;
-  padding: 0.75rem;
-  border: 1px solid #ddd;
-  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-}
-.card .card-title {
-  font-size: 1.5rem;
-  padding-bottom: 0.75rem;
-  font-weight: bold;
-}
-.card .card-body {
-  font-size: 1rem;
-}
-.card a {
-  text-decoration: underline;
-  color: #2364dc;
+  padding: $base-padding;
+  border: $base-border-thickness solid #ddd;
+  box-shadow: $base-box-shadow;
+  border-radius: math.div($base-border-radius, 2);
+
+  .card-title {
+    font-size: $font-size-lg;
+    padding-bottom: $base-padding;
+    font-weight: bold;
+  }
+
+  .card-body {
+    font-size: $base-font-size;
+  }
+
+  a {
+    text-decoration: underline;
+    color: $primary;
+  }
 }
 
+@debug math.div(
+  $base-border-radius,
+  2
+); // This will output "10px" to the console.
 /* 
 The @debug directive in SASS is used to print the value of a variable or an expression to the console during compilation. This can be extremely useful for debugging your stylesheets, as it allows you to see the values of your variables and calculations at specific points in your code.
  */

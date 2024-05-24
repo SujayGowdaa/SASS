@@ -1,0 +1,26 @@
+// font-family
+$font-family: 'poppins', sans-serif;
+
+// theme colors
+$primary: #2364dc;
+$secondary: #1ebf49;
+$error: #c21b1e;
+$info: #e5e21e;
+
+// spacing
+$base-padding: 0.75rem;
+$base-margin: 0.75rem;
+
+// borders
+$base-border-thickness: 1px;
+$base-border-radius: 20px;
+
+// box-shadow
+$base-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+
+// font sizes
+$base-font-size: 1rem;
+$font-size-sm: $base-font-size * 0.75;
+$font-size-lg: $base-font-size * 1.5;
+$font-size-xl: $base-font-size * 2;
+$font-size-xxl: $base-font-size * 3;
