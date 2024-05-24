@@ -1,0 +1,38 @@
+// Importing variables from a separate file
+@use 'variables' as *;
+
+// Iterating over each color in the $colors map
+@each $key, $val in $colors {
+  // Generating text color classes for each color key
+  .text-#{$key} {
+    color: $val;
+  }
+  // Generating background color classes for each color key
+  .bg-#{$key} {
+    background-color: $val;
+  }
+
+  // Generating lighter color variations
+  @for $i from 1 through 9 {
+    // Each step increases lightness by 5% more, creating classes like .text-red-light-1, .text-red-light-2, etc.
+    .text-#{$key}-light-#{$i} {
+      color: lighten($val, $i * 5);
+    }
+    // Each step increases lightness by 5% more for background classes
+    .bg-#{$key}-light-#{$i} {
+      background-color: lighten($val, $i * 5);
+    }
+  }
+
+  // Generating darker color variations
+  @for $i from 1 through 9 {
+    // Each step increases darkness by 5%, creating classes like .text-red-dark-1, .text-red-dark-2, etc.
+    .text-#{$key}-dark-#{$i} {
+      color: darken($val, $i * 5);
+    }
+    // Each step increases darkness by 5% for background classes
+    .bg-#{$key}-dark-#{$i} {
+      background-color: darken($val, $i * 5);
+    }
+  }
+}
