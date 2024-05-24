@@ -1,4 +1,45 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.test-btn {
+  background: #9900ff;
+}
+
+/*
+@debug map-get($colors, 'purple');
+@debug map-has-key($colors, 'secondary');
+@debug map-has-key($colors, 'tertiary');
+@debug map-remove($colors, 'primary');
+@debug map-merge(
+  $colors,
+  (
+    'pink': #ffc0cb,
+  )
+);
+*/
+/*
+Explanation of Each SASS Operation
+
+map-get($colors, 'purple'):
+Retrieves the value associated with the key 'purple' from the $colors map.
+Stores the result in the variable $purple-color.
+
+map-has-key($colors, 'secondary'):
+Checks if the key 'secondary' exists in the $colors map.
+Stores the result (boolean value) in the variable $has-secondary.
+
+map-has-key($colors, 'tertiary'):
+Checks if the key 'tertiary' exists in the $colors map.
+Stores the result (boolean value) in the variable $has-tertiary.
+
+map-remove($colors, 'primary'):
+Removes the key 'primary' and its associated value from the $colors map.
+Stores the resulting map in the variable $colors without primary.
+
+map-merge($colors, ('pink': #ffc0cb)):
+Merges a new key-value pair ('pink': #ffc0cb) into the $colors map.
+Stores the resulting map in the variable $colors with pink.
+
+By removing the @debug statements and adding comments, the code remains clear and maintainable, allowing you to understand the purpose and outcome of each operation.
+*/
 /* reset styles */
 * {
   color: inherit;
@@ -28,7 +69,7 @@ img {
 }
 
 .test {
-  color: #2364dc;
+  color: #326dee;
 }
 
 /* 
@@ -56,7 +97,7 @@ math.abs($number): Returns the absolute value of $number.
 }
 .card a {
   text-decoration: underline;
-  color: #2364dc;
+  color: #326dee;
 }
 
 /* 

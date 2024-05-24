@@ -1,11 +1,69 @@
-// font-family
-$font-family: 'poppins', sans-serif;
-
 // theme colors
-$primary: #2364dc;
-$secondary: #1ebf49;
-$error: #c21b1e;
-$info: #e5e21e;
+$primary: #326dee;
+$secondary: #1ac886;
+$error: #d32752;
+$info: #f6c31c;
+
+// color palette
+$colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'error': $error,
+  'info': $info,
+  'blue': #1919e6,
+  'red': #e61919,
+  'yellow': #e6e619,
+  'green': #19e635,
+  'orange': #ffa600,
+  'purple': #9900ff,
+  'gray': #808080,
+  'black': black,
+  'white': white,
+);
+
+// maps through the colors map and gets the value of the key 'purple'
+.test-btn {
+  background: map-get($colors, 'purple');
+}
+
+/*
+@debug map-get($colors, 'purple');
+@debug map-has-key($colors, 'secondary');
+@debug map-has-key($colors, 'tertiary');
+@debug map-remove($colors, 'primary');
+@debug map-merge(
+  $colors,
+  (
+    'pink': #ffc0cb,
+  )
+);
+*/
+
+/*
+Explanation of Each SASS Operation
+
+map-get($colors, 'purple'):
+Retrieves the value associated with the key 'purple' from the $colors map.
+Stores the result in the variable $purple-color.
+
+map-has-key($colors, 'secondary'):
+Checks if the key 'secondary' exists in the $colors map.
+Stores the result (boolean value) in the variable $has-secondary.
+
+map-has-key($colors, 'tertiary'):
+Checks if the key 'tertiary' exists in the $colors map.
+Stores the result (boolean value) in the variable $has-tertiary.
+
+map-remove($colors, 'primary'):
+Removes the key 'primary' and its associated value from the $colors map.
+Stores the resulting map in the variable $colors without primary.
+
+map-merge($colors, ('pink': #ffc0cb)):
+Merges a new key-value pair ('pink': #ffc0cb) into the $colors map.
+Stores the resulting map in the variable $colors with pink.
+
+By removing the @debug statements and adding comments, the code remains clear and maintainable, allowing you to understand the purpose and outcome of each operation.
+*/
 
 // spacing
 $base-padding: 0.75rem;
